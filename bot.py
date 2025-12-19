@@ -146,7 +146,7 @@ def start(msg):
 4 Promote
 5 Wallet ID
 6 Status
-"""
+""
     bot.send_message(msg.chat.id, menu)
 
 @bot.message_handler(func=lambda m: True)
