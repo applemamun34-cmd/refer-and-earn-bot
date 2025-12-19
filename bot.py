@@ -137,14 +137,15 @@ def start(msg):
         )
         return
 
-    menu = """🎉 স্বাগতম REFER & EARN বটে 🎉
+    menu = menu = """
+স্বাগতম REFER & EARN বটে
 
-1️⃣ Refer & Income
-2️⃣ Balance
-3️⃣ Withdraw
-4️⃣ Promote
-5️⃣ Wallet ID
-6️⃣ Status
+1 Refer & Income
+2 Balance
+3 Withdraw
+4 Promote
+5 Wallet ID
+6 Status
 """
     bot.send_message(msg.chat.id, menu)
 
