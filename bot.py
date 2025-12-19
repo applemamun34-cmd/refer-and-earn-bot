@@ -57,17 +57,17 @@ def start(msg):
 
     if not is_joined(msg.from_user.id):
         kb = InlineKeyboardMarkup()
-        kb.add(InlineKeyboardButton("📢 Channel 1", url="https://t.me/premium_app_bazaar"))
-        kb.add(InlineKeyboardButton("📢 Channel 2", url="https://t.me/pro_shop_bd"))
+        kb.add(InlineKeyboardButton(" Channel 1", url="https://t.me/premium_app_bazaar"))
+        kb.add(InlineKeyboardButton(" Channel 2", url="https://t.me/pro_shop_bd"))
     
         bot.send_message(
             msg.chat.id,
-            "❌ আগে সব চ্যানেলে Join করুন তারপর আবার /start দিন",
+            " আগে সব চ্যানেলে Join করুন তারপর আবার /start দিন",
             reply_markup=kb
         )
         return
 
-    menu = """🎉
+    menu = """
   bot.py
   import telebot
 import json
@@ -128,11 +128,11 @@ def start(msg):
 
     if not is_joined(msg.from_user.id):
         kb = InlineKeyboardMarkup()
-        kb.add(InlineKeyboardButton("📢 Channel 1", url="https://t.me/premium_app_bazaar"))
-        kb.add(InlineKeyboardButton("📢 Channel 2", url="https://t.me/pro_shop_bd"))
+        kb.add(InlineKeyboardButton(" Channel 1", url="https://t.me/premium_app_bazaar"))
+        kb.add(InlineKeyboardButton(" Channel 2", url="https://t.me/pro_shop_bd"))
         bot.send_message(
             msg.chat.id,
-            "❌ আগে সব চ্যানেলে Join করুন তারপর আবার /start দিন",
+            " আগে সব চ্যানেলে Join করুন তারপর আবার /start দিন",
             reply_markup=kb
         )
         return
@@ -161,46 +161,46 @@ def all_msg(msg):
         link = f"https://t.me/refer_and_earn_mamun_bot?start={user_id}"
         bot.send_message(
             msg.chat.id,
-            f"👥 আপনার Refer Link:\n{link}\n\nপ্রতি Refer = {REFER_BONUS} টাকা"
+            f" আপনার Refer Link:\n{link}\n\nপ্রতি Refer = {REFER_BONUS} টাকা"
         )
 
     elif msg.text == "2":
         bot.send_message(
             msg.chat.id,
-            f"💰 আপনার Balance: {users[user_id]['balance']} টাকা"
+            f" আপনার Balance: {users[user_id]['balance']} টাকা"
         )
 
     elif msg.text == "3":
         if users[user_id]['balance'] < MIN_WITHDRAW:
-            bot.send_message(msg.chat.id, "❌ Minimum Withdraw 100 টাকা")
+            bot.send_message(msg.chat.id, " Minimum Withdraw 100 টাকা")
         else:
-            bot.send_message(msg.chat.id, "📤 Withdraw করতে আপনার Wallet ID পাঠান")
+            bot.send_message(msg.chat.id, " Withdraw করতে আপনার Wallet ID পাঠান")
 
     elif msg.text == "4":
         bot.send_message(
             msg.chat.id,
-            "📢 Promote Message:\n\n"
-            "🔥 REFER & EARN BOT 🔥\n"
-            "👥 Refer করে ইনকাম করুন\n"
-            "🎁 Daily Bonus\n\n"
-            "👉 Join Now: @refer_and_earn_mamun_bot"
+            " Promote Message:\n\n"
+            " REFER & EARN BOT \n"
+            " Refer করে ইনকাম করুন\n"
+            " Daily Bonus\n\n"
+            " Join Now: @refer_and_earn_mamun_bot"
         )
 
     elif msg.text == "5":
         bot.send_message(
             msg.chat.id,
-            "📱 আপনার bKash/Nagad নাম্বার পাঠান"
+            " আপনার bKash/Nagad নাম্বার পাঠান"
         )
 
     elif msg.text.isdigit() and len(msg.text) >= 10:
         users[user_id]['wallet'] = msg.text
         save_users(users)
-        bot.send_message(msg.chat.id, "✅ Wallet Saved")
+        bot.send_message(msg.chat.id, " Wallet Saved")
 
     elif msg.text == "6":
         bot.send_message(
             msg.chat.id,
-            f"📊 Status\nBalance: {users[user_id]['balance']}\nWallet: {users[user_id]['wallet']}"
+            f" Status\nBalance: {users[user_id]['balance']}\nWallet: {users[user_id]['wallet']}"
         )
 
 bot.polling()
